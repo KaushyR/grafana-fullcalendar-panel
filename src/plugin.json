@@ -1,22 +1,21 @@
 {
-    "type": "panel",
-    "name": "Calendar Panel",
-    "id": "kr-calendar-panel",
-  
-    "info": {
-      "description": "A calendar panel based on tui-calendar",
-      "author": {
-        "name": "Kaushalya Rathnayake",
-        "url": "https://github.com/kaushyr@gmail.com"
-      },
-      "keywords": ["tui-calendar", "panel"],
-      "version": "1.0.0",
-      "updated": "2018-11-12"
+  "type": "panel",
+  "name": "Calendar Panel",
+  "id": "kr-calendar-panel",
+
+  "info": {
+    "description": "A calendar panel based on tui-calendar",
+    "author": {
+      "name": "Kaushalya Rathnayake",
+      "url": "https://github.com/kaushy@gmail.com"
     },
-  
-    "dependencies": {
-      "grafanaVersion": "5.x.x",
-      "plugins": [ ]
-    }
+    "keywords": ["tui-calendar", "panel"],
+    "version": "1.0.0",
+    "updated": "2018-11-06"
+  },
+
+  "dependencies": {
+    "grafanaVersion": "5.x.x",
+    "plugins": [ ]
   }
 }
