@@ -1,7 +1,7 @@
 {
   "type": "panel",
-  "name": "Calendar Panel",
-  "id": "kr-calendar-panel",
+  "name": "Tui Calendar Panel",
+  "id": "kaushyr-tui-calendar-panel",
 
   "info": {
     "description": "A calendar panel based on tui-calendar",

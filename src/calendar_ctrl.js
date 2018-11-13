@@ -6,7 +6,7 @@ import calRenderer from './cal_renderer';
 import DataFormatter from './data_formatter';
 import './css/calendar.css!';
 
-const packageId = 'kr-calendar-panel';
+const packageId = 'kaushyr-tui-calendar-panel';
 
 const panelDefaults = {
   calendarId: '1',

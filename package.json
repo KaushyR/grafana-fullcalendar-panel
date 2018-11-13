@@ -1,7 +1,7 @@
 {
-  "name": "kr-calendar-panel",
+  "name": "kaushyr-tui-calendar-panel",
   "version": "1.0.0",
-  "description": "A full calendar panel based on tui-calendar",
+  "description": "A calendar panel based on tui-calendar",
   "main": "src/module.js",
   "scripts": {
     "clean": "rm -r dist/*",

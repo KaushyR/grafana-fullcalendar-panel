@@ -9,8 +9,8 @@ module.exports = (grunt) => {
 
     clean: {
       build: ['dist/**/*'],
-      tmp: ['kr-calendar-panel'],
-      release: ['kr-calendar-panel.zip']
+      tmp: ['kaushyr-tui-calendar-panel'],
+      release: ['kaushyr-tui-calendar-panel.zip']
     },
 
     copy: {
@@ -41,7 +41,7 @@ module.exports = (grunt) => {
         cwd: 'dist/',
         expand: true,
         src: ['**/*'],
-        dest: 'kr-calendar-panel'
+        dest: 'kaushyr-tui-calendar-panel'
       },
     },
 
@@ -80,7 +80,7 @@ module.exports = (grunt) => {
     },
 
     zip: {
-      'kr-calendar-panel.zip': ['kr-calendar-panel/**/*']
+      'kaushyr-tui-calendar-panel.zip': ['kaushyr-tui-calendar-panel/**/*']
     }
 
   });
