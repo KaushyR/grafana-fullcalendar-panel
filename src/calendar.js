@@ -23,12 +23,21 @@ export default class Calendar {
         // },
 
         milestone: function(model) {
-          return '<span class="calendar-font-icon ic-milestone-b"></span> <span style="background-color: ' + model.bgColor + '">' + model.title + '</span>';
+          if(!model.raw){
+            model.raw = "javascript:void(0)";
+          }
+          return '<span class="calendar-font-icon ic-milestone-b"></span> <span style="background-color: ' + model.bgColor + '"> <a target="_blank" href="'+model.raw+'">'+model.title+'</a> </span>';
         },
         allday: function(schedule) {
+          if(!schedule.raw){
+            schedule.raw = "javascript:void(0)";
+          }
           return self.getTimeTemplate(schedule, true);
         },
         time: function(schedule) {
+          if(!schedule.raw){
+            schedule.raw = "javascript:void(0)";
+          }
           return self.getTimeTemplate(schedule, false);
         },
         task: function(schedule) {
@@ -116,7 +125,7 @@ export default class Calendar {
       } else if (schedule.location) {
         html.push('<span class="calendar-font-icon ic-location-b"></span>');
       }
-      html.push(' ' + schedule.title);
+      html.push(' <a target="_blank" href="'+schedule.raw+'">'+schedule.title+'</a> ');
     }
 
     return html.join('');

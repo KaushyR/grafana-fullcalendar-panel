@@ -32,28 +32,7 @@ function link(scope, elem, attrs, ctrl) {
 
     if (!ctrl.data) return;
     ctrl.calendar.clear(true);
-    ctrl.calendar.createSchedules(ctrl.data); // [
-    //   {
-    //     id: '1',
-    //     calendarId: '1',
-    //     title: 'my schedule',
-    //     category: 'time',
-    //     dueDateClass: '',
-    //     start: '2018-11-11T22:30:00+09:00',
-    //     end: '2018-11-12T02:30:00+09:00'
-    //   },
-    //   {
-    //     id: '2',
-    //     calendarId: '1',
-    //     title: 'second schedule',
-    //     category: 'time',
-    //     dueDateClass: '',
-    //     start: '2018-11-10T17:30:00+09:00',
-    //     end: '2018-11-10T18:31:00+09:00',
-    //     isReadOnly: true    // schedule is read-only
-    //   }
-    // ]);
-
+    ctrl.calendar.createSchedules(ctrl.data);
     ctrl.calendar.setRangeText();
   }
 }

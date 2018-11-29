@@ -7,8 +7,6 @@ exports.default = void 0;
 
 var _sdk = require("app/plugins/sdk");
 
-var _time_series = _interopRequireDefault(require("app/core/time_series2"));
-
 var _kbn = _interopRequireDefault(require("app/core/utils/kbn"));
 
 var _cal_renderer = _interopRequireDefault(require("./cal_renderer"));
@@ -80,6 +78,8 @@ function (_MetricsPanelCtrl) {
 
     _this.events.on('data-received', _this.onDataReceived.bind(_assertThisInitialized(_assertThisInitialized(_this))));
 
+    _this.events.on('data-error', _this.onDataError.bind(_assertThisInitialized(_assertThisInitialized(_this))));
+
     _this.events.on('panel-teardown', _this.onPanelTeardown.bind(_assertThisInitialized(_assertThisInitialized(_this))));
 
     _this.events.on('data-snapshot-load', _this.onDataSnapshotLoad.bind(_assertThisInitialized(_assertThisInitialized(_this))));
@@ -91,6 +91,11 @@ function (_MetricsPanelCtrl) {
   }
 
   _createClass(CalendarCtrl, [{
+    key: "onDataError",
+    value: function onDataError(error) {
+      console.log('Data error %o', error);
+    }
+  }, {
     key: "onPanelTeardown",
     value: function onPanelTeardown() {
       if (this.calendar) {
@@ -105,6 +110,7 @@ function (_MetricsPanelCtrl) {
   }, {
     key: "onDataReceived",
     value: function onDataReceived(dataList) {
+      console.log('OnDataReceived %o', dataList);
       if (!dataList || !dataList.length || dataList.length == 0) return;
       var data = [];
 

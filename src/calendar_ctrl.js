@@ -1,6 +1,5 @@
 /*eslint id-length: ["error", { "min": 1 }]*/
 import { MetricsPanelCtrl } from 'app/plugins/sdk';
-import TimeSeries from 'app/core/time_series2';
 import kbn from 'app/core/utils/kbn';
 import calRenderer from './cal_renderer';
 import DataFormatter from './data_formatter';
@@ -37,15 +36,20 @@ export default class CalendarCtrl extends MetricsPanelCtrl {
 
     this.events.on('init-edit-mode', this.onInitEditMode.bind(this));
     this.events.on('data-received', this.onDataReceived.bind(this));
+    this.events.on('data-error', this.onDataError.bind(this));
     this.events.on('panel-teardown', this.onPanelTeardown.bind(this));
     this.events.on('data-snapshot-load', this.onDataSnapshotLoad.bind(this));
-    
+
     $scope.$watch(
       'ctrl.panel.content',
       _.throttle(() => {
         this.render();
       }, 1000)
     );
+  }
+
+  onDataError(error){
+    console.log('Data error %o', error);
   }
 
   onPanelTeardown() {
@@ -59,6 +63,7 @@ export default class CalendarCtrl extends MetricsPanelCtrl {
   }
 
   onDataReceived(dataList) {
+    console.log('OnDataReceived %o',dataList);
     if (!dataList || !dataList.length || dataList.length==0) return;
 
     const data = [];
